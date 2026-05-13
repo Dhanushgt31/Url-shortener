@@ -59,7 +59,7 @@ app.post('/shorten', async (req, res) => {
     await newUrl.save();
 
     res.json({
-      shortUrl: `http://localhost:${PORT}/${shortId}`,
+      shortUrl: `https://url-shortener-production-275b.up.railway.app/${shortId}`,
     });
   } catch (err) {
     res.status(500).json({ error: 'Server error' });
