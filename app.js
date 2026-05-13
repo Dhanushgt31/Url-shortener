@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cors());
 
 // ================= DATABASE ==============node===
-mongoose.connect('mongodb://127.0.0.1:27017/urlShortener');
+mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/urlshortener')
 
 const urlSchema = new mongoose.Schema({
   longUrl: String,
