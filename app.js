@@ -10,7 +10,8 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const { nanoid } = require('nanoid');
+const { customAlphabet } = require('nanoid/non-secure');
+const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 6);
 const cors = require('cors');
 
 const app = express();
