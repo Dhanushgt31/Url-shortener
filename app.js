@@ -20,7 +20,11 @@ app.use(express.json());
 app.use(cors());
 
 // ================= DATABASE ==============node===
-mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/urlshortener')
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => console.log('MongoDB connected'))
+  .catch(err => console.log('MongoDB error:', err));
 
 const urlSchema = new mongoose.Schema({
   longUrl: String,
