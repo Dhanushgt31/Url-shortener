@@ -20,10 +20,8 @@ app.use(express.json());
 app.use(cors());
 
 // ================= DATABASE ==============node===
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log('MongoDB connected'))
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB error:', err));
 
 const urlSchema = new mongoose.Schema({
