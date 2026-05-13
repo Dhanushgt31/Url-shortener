@@ -11,8 +11,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const { customAlphabet } = require('nanoid/non-secure');
-const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 6);
-const cors = require('cors');
+const nanoid = () => Math.random().toString(36).substring(2, 8);
 
 const app = express();
 const PORT = 3000;
