@@ -46,7 +46,7 @@ app.post('/shorten', async (req, res) => {
   try {
     const { longUrl, customAlias } = req.body;
 
-    const shortId = customAlias || nanoid(6);
+    const shortId = customAlias || nanoid();
 
     const existing = await URL.findOne({ shortId });
     if (existing) {
